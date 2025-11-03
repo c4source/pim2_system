@@ -1,0 +1,19 @@
+# Indica que este é o arquivo principal do projeto
+
+root = true
+
+# Regras que se aplicam a todos os arquivos
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+ident_style = space
+ident_size = 4 
+
+# Execeção para arquivos Markdown (.md)
+
+[*.md]
+trim_trailing_whitespace = false 
+

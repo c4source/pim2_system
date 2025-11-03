@@ -30,7 +30,13 @@ if indice is None:
     sys.exit(1)
 
 adm = dados[indice]
-confirm = input(f"Confirmar exclusão do administrador {adm['nome']} (ID {adm['id']})? (s/n): ").strip().lower()
+confirm = (
+    input(
+        f"Confirmar exclusão do administrador {adm['nome']} (ID {adm['id']})? (s/n): "
+    )
+    .strip()
+    .lower()
+)
 if confirm != "s":
     print("Exclusão cancelada.")
     sys.exit(0)
@@ -41,3 +47,5 @@ with open(arquivo_json, "w", encoding="utf-8") as f:
     json.dump(dados, f, indent=4, ensure_ascii=False)
 
 print("Registro excluido com sucesso!")
+
+
