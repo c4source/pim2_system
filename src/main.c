@@ -17,7 +17,6 @@ void menuPrincipalAdmin();
 void menuPrincipalProfessor();
 void menuPrincipalAluno();
 
-
 void menuAlunos();
 void menuTurmas();
 void menuAulas();
@@ -27,9 +26,9 @@ void menuAdministrador();
 void menuNotas();
 
 int main(void) {
-    #ifdef _WIN32
+#ifdef _WIN32
     system("chcp 65001 > nul");
-    #endif
+#endif
     // 1) Realiza o login
     int tipoUsuario = realizarLogin();
 
@@ -59,7 +58,6 @@ int main(void) {
     return 0;
 }
 
-
 // ===============================================================
 // MENUS PRINCIPAIS PERSONALIZADOS POR TIPO DE USUÁRIO
 // ===============================================================
@@ -78,31 +76,53 @@ void menuPrincipalAdmin() {
         printf("5. Menu de Aulas\n");
         printf("6. Menu de Turmas\n");
         printf("7. Menu de Administrador\n");
-        printf("8. Logout\n");
+        printf("8. Comunicação em rede (chat)\n");
+        printf("9. Logout\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
-            case 1: menuAlunos(); break;
-            case 2: menuProfessores(); break;
-            case 3: menuAtividades(); break;
-            case 4: menuNotas(); break;
-            case 5: menuAulas(); break;
-            case 6: menuTurmas(); break;
-            case 7: menuAdministrador(); break;
+            case 1:
+                menuAlunos();
+                break;
+            case 2:
+                menuProfessores();
+                break;
+            case 3:
+                menuAtividades();
+                break;
+            case 4:
+                menuNotas();
+                break;
+            case 5:
+                menuAulas();
+                break;
+            case 6:
+                menuTurmas();
+                break;
+            case 7:
+                menuAdministrador();
+                break;
             case 8:
+                system("python scripts/cliente_mensagens.py");
+                _getch();
+                break;
+            case 9:
                 tipoUsuarioAtual = 0;
                 idUsuarioAtual = 0;
                 strcpy(usuarioNome, "");
                 printf("\nFazendo logout...\n");
                 _getch();
                 int c;
-                while ((c = getchar()) != '\n' && c != EOF) {} // limpa buffer
-                main(); // volta pro login
+                while ((c = getchar()) != '\n' && c != EOF) {
+                }  // limpa buffer
+                main();  // volta pro login
                 return;
-            default: printf("Opcao invalida!\n"); _getch();
+            default:
+                printf("Opcao invalida!\n");
+                _getch();
         }
-    } while (opcao != 8);
+    } while (opcao != 9);
 }
 
 void menuPrincipalProfessor() {
@@ -115,31 +135,45 @@ void menuPrincipalProfessor() {
         printf("2. Minhas Aulas\n");
         printf("3. Minhas Atividades\n");
         printf("4. Lançar/Editar Notas\n");
-        printf("5. Logout\n");
+        printf("5. Comunicação em Rede (Chat)\n");
+        printf("6. Logout\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
-            case 1: menuTurmas(); break;
-            case 2: menuAulas(); break;
-            case 3: menuAtividades(); break;
-            case 4: menuNotas(); break;
+            case 1:
+                menuTurmas();
+                break;
+            case 2:
+                menuAulas();
+                break;
+            case 3:
+                menuAtividades();
+                break;
+            case 4:
+                menuNotas();
+                break;
             case 5:
+                system("python scripts/cliente_mensagens.py");
+                _getch();
+                break;
+            case 6:
                 tipoUsuarioAtual = 0;
                 idUsuarioAtual = 0;
                 strcpy(usuarioNome, "");
                 printf("\nFazendo logout...\n");
                 _getch();
                 int c;
-                while ((c = getchar()) != '\n' && c != EOF) {} // limpa buffer
-                main(); // volta pro login
+                while ((c = getchar()) != '\n' && c != EOF) {
+                }  // limpa buffer
+                main();  // volta pro login
                 return;
             default:
-                printf("Opção inválida!\n"); _getch();
+                printf("Opção inválida!\n");
+                _getch();
         }
-    } while (opcao != 5);
+    } while (opcao != 6);
 }
-
 
 // 👨‍🎓 ALUNO — pode ver aulas, atividades e suas notas
 void menuPrincipalAluno() {
@@ -156,9 +190,15 @@ void menuPrincipalAluno() {
         scanf("%d", &opcao);
 
         switch (opcao) {
-            case 1: menuAulas(); break;
-            case 2: menuAtividades(); break;
-            case 3: menuNotas(); break;
+            case 1:
+                menuAulas();
+                break;
+            case 2:
+                menuAtividades();
+                break;
+            case 3:
+                menuNotas();
+                break;
             case 4:
                 tipoUsuarioAtual = 0;
                 idUsuarioAtual = 0;
@@ -166,18 +206,20 @@ void menuPrincipalAluno() {
                 printf("\nFazendo logout...\n");
                 _getch();
                 int c;
-                while ((c = getchar()) != '\n' && c != EOF) {} // limpa buffer
-                main(); // volta pro login
+                while ((c = getchar()) != '\n' && c != EOF) {
+                }  // limpa buffer
+                main();  // volta pro login
                 return;
-            default: printf("Opcao invalida!\n"); _getch();
+            default:
+                printf("Opcao invalida!\n");
+                _getch();
         }
     } while (opcao != 4);
 }
 
-
-void menuAlunos(){
+void menuAlunos() {
     int opcao;
-    do{
+    do {
         system("cls");
         printf("========== MENU DE ALUNOS ==========\n");
         printf("1. Cadastrar Aluno\n");
@@ -188,43 +230,42 @@ void menuAlunos(){
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-        case 1:
-            system("cls");
-            cadastrarAluno();
-            _getch();
-            break;
-        case 2:
-            system("cls");
-            editarAluno();
-            _getch();
-            break;
-        case 3:
-            system("cls");
-            excluirAluno();
-            _getch();
-            break;
-        case 4:
-            system("cls");
-            listarAlunos();
-            printf("Pressione qualquer tecla para Fechar a listagem de alunos.");
-            _getch();
-            break;
-        case 5:
-            printf("Voltando ao menu Principal...");
-            break;
-        default:
-            break;
+        switch (opcao) {
+            case 1:
+                system("cls");
+                cadastrarAluno();
+                _getch();
+                break;
+            case 2:
+                system("cls");
+                editarAluno();
+                _getch();
+                break;
+            case 3:
+                system("cls");
+                excluirAluno();
+                _getch();
+                break;
+            case 4:
+                system("cls");
+                listarAlunos();
+                printf("Pressione qualquer tecla para Fechar a listagem de alunos.");
+                _getch();
+                break;
+            case 5:
+                printf("Voltando ao menu Principal...");
+                break;
+            default:
+                break;
         }
 
-    }while(opcao != 5 );
+    } while (opcao != 5);
 }
 
-void menuProfessores(){
+void menuProfessores() {
     int opcao;
 
-    do{
+    do {
         system("cls");
         printf("========== MENU DE PROFESSORES ==========\n");
         printf("1. Cadastrar Professor\n");
@@ -236,49 +277,48 @@ void menuProfessores(){
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-        case 1:
-            system("cls");
-            cadastrarProfessor();
-            _getch();
-            break;
-        case 2:
-            system("cls");
-            editarProfessor();
-            _getch();
-            break;
-        case 3:
-            system("cls");
-            excluirProfessor();
-            _getch();
-            break;
-        case 4:
-            system("cls");
-            listarProfessores();
-            printf("Pressione qualquer tecla para Fechar a listagem de professores.");
-            _getch();
-            break;
-        case 5:
-            system("cls");
-            relatorioDisciplinasdoProfessor();
-            printf("Pressione qualquer tecla para Fechar o relatório.");
-            _getch();
-            break;
-        case 6:
-            printf("Voltando ao menu Principal...");
-            break;
-        default:
-            break;
+        switch (opcao) {
+            case 1:
+                system("cls");
+                cadastrarProfessor();
+                _getch();
+                break;
+            case 2:
+                system("cls");
+                editarProfessor();
+                _getch();
+                break;
+            case 3:
+                system("cls");
+                excluirProfessor();
+                _getch();
+                break;
+            case 4:
+                system("cls");
+                listarProfessores();
+                printf("Pressione qualquer tecla para Fechar a listagem de professores.");
+                _getch();
+                break;
+            case 5:
+                system("cls");
+                relatorioDisciplinasdoProfessor();
+                printf("Pressione qualquer tecla para Fechar o relatório.");
+                _getch();
+                break;
+            case 6:
+                printf("Voltando ao menu Principal...");
+                break;
+            default:
+                break;
         }
 
-    }while(opcao != 6 );
+    } while (opcao != 6);
 }
 
-void menuAdministrador(){
+void menuAdministrador() {
     int opcao;
 
-    do{
+    do {
         system("cls");
         printf("========== MENU DE ADMINISTRADOR ==========\n");
         printf("1. Cadastrar Administrador\n");
@@ -289,43 +329,42 @@ void menuAdministrador(){
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao)
-        {
-        case 1:
-            system("cls");
-            cadastrarAdministrador();
-            _getch();
-            break;
-        case 2:
-            system("cls");
-            editarAdministrador();
-            _getch();
-            break;
-        case 3:
-            system("cls");
-            excluirAdministrador();
-            _getch();
-            break;
-        case 4:
-            system("cls");
-            listarAdministradores();
-            printf("Pressione qualquer tecla para Fechar a listagem de administradores.");
-            _getch();
-            break;
-        case 5:
-            printf("Voltando ao menu Principal...");
-            break;
-        default:
-            break;
+        switch (opcao) {
+            case 1:
+                system("cls");
+                cadastrarAdministrador();
+                _getch();
+                break;
+            case 2:
+                system("cls");
+                editarAdministrador();
+                _getch();
+                break;
+            case 3:
+                system("cls");
+                excluirAdministrador();
+                _getch();
+                break;
+            case 4:
+                system("cls");
+                listarAdministradores();
+                printf("Pressione qualquer tecla para Fechar a listagem de administradores.");
+                _getch();
+                break;
+            case 5:
+                printf("Voltando ao menu Principal...");
+                break;
+            default:
+                break;
         }
 
-    }while(opcao != 5 );
+    } while (opcao != 5);
 }
 
-void menuTurmas(){
+void menuTurmas() {
     int opcao;
 
-    do{
+    do {
         system("cls");
         printf("========== MENU DE TURMAS ==========\n");
         printf("1. Cadastrar Turma\n");
@@ -337,7 +376,7 @@ void menuTurmas(){
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
-        switch (opcao){
+        switch (opcao) {
             case 1:
                 system("cls");
                 cadastrarTurma();
@@ -373,12 +412,12 @@ void menuTurmas(){
                 _getch();
         }
 
-    }while(opcao != 6);
+    } while (opcao != 6);
 }
 
-void menuAulas(){
+void menuAulas() {
     int opcao;
-    do{
+    do {
         system("cls");
         printf("========== MENU DE AULAS ==========\n");
         printf("Usuário logado: %s\n\n", usuarioNome);
@@ -389,7 +428,7 @@ void menuAulas(){
             printf("\nEscolha uma opcao: ");
             scanf("%d", &opcao);
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     system("cls");
                     listarAulas();
@@ -403,8 +442,7 @@ void menuAulas(){
                     printf("Opção inválida!\n");
                     _getch();
             }
-        }
-        else {
+        } else {
             printf("1. Cadastrar Aula\n");
             printf("2. Editar Aula\n");
             printf("3. Excluir Aula\n");
@@ -413,7 +451,7 @@ void menuAulas(){
             printf("\nEscolha uma opcao: ");
             scanf("%d", &opcao);
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     system("cls");
                     cadastrarAula();
@@ -444,12 +482,12 @@ void menuAulas(){
             }
         }
 
-    }while(opcao != 5 && opcao != 2);
+    } while (opcao != 5 && opcao != 2);
 }
 
-void menuAtividades(){
+void menuAtividades() {
     int opcao;
-    do{
+    do {
         system("cls");
         printf("========== MENU DE ATIVIDADES ==========\n");
         printf("Usuário logado: %s\n\n", usuarioNome);
@@ -461,7 +499,7 @@ void menuAtividades(){
             printf("\nEscolha uma opcao: ");
             scanf("%d", &opcao);
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     system("cls");
                     listarAtividades();
@@ -475,8 +513,7 @@ void menuAtividades(){
                     printf("Opção inválida!\n");
                     _getch();
             }
-        }
-        else {
+        } else {
             // Professor/Admin têm acesso completo
             printf("1. Cadastrar Atividade\n");
             printf("2. Editar Atividade\n");
@@ -486,7 +523,7 @@ void menuAtividades(){
             printf("\nEscolha uma opcao: ");
             scanf("%d", &opcao);
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     system("cls");
                     cadastrarAtividade();
@@ -517,9 +554,8 @@ void menuAtividades(){
             }
         }
 
-    }while(opcao != 5 && opcao != 2);
+    } while (opcao != 5 && opcao != 2);
 }
-
 
 void menuNotas() {
     int opcao;
@@ -538,7 +574,7 @@ void menuNotas() {
             switch (opcao) {
                 case 1:
                     system("cls");
-                    listarNotas(); // Aqui você pode futuramente filtrar pelo aluno logado
+                    listarNotas();  // Aqui você pode futuramente filtrar pelo aluno logado
                     _getch();
                     break;
                 case 2:
