@@ -26,9 +26,8 @@ void menuAdministrador();
 void menuNotas();
 
 int main(void) {
-#ifdef _WIN32
     system("chcp 65001 > nul");
-#endif
+
     // 1) Realiza o login
     int tipoUsuario = realizarLogin();
 
