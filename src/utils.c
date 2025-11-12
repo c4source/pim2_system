@@ -59,12 +59,12 @@ void construirCaminho(char* destino, const char* subcaminho) {
 // --- Limpa a tela ---
 void limparTela(void) {
     system("cls");
+}
+// --- Pausa até pressionar Enter ---
+void pausar(void) {
+    printf("\nPressione ENTER para continuar...");
+    fflush(stdout);
 
-    // --- Pausa até pressionar Enter ---
-    void pausar(void) {
-        printf("\nPressione ENTER para continuar...");
-        fflush(stdout);
-
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF);  // limpa buffer residual
-    }
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);  // limpa buffer residual
+}

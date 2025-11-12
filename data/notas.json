@@ -12,5 +12,12 @@
         "atividadeId": 1,
         "nota": 10.0,
         "status": "corrigida"
+    },
+    {
+        "id": 3,
+        "alunoId": 1,
+        "atividadeId": 1,
+        "nota": 5.8,
+        "status": "entregue"
     }
 ]
