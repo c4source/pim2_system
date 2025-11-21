@@ -5,3 +5,43 @@
 [2025-11-21 15:06:49] (socket) Cliente conectado: ('127.0.0.1', 55028)
 [2025-11-21 15:06:49] (socket) Mensagem recebida: MURAL_LIST|1
 [2025-11-21 15:06:49] (cliente) MURAL_LIST turma=1
+[2025-11-21 15:49:21] (sistema) Servidor iniciado
+[2025-11-21 15:50:42] (socket) Cliente conectado: ('192.168.3.63', 56715)
+[2025-11-21 15:50:42] (socket) Mensagem recebida: Teste123
+[2025-11-21 16:00:13] (sistema) Servidor iniciado
+[2025-11-21 16:01:36] (socket) Cliente conectado: ('192.168.3.63', 57077)
+[2025-11-21 16:01:36] (socket) Mensagem recebida: MURAL_POST|3|professor|Alberto|Amanhã não havera aula.
+[2025-11-21 16:01:36] (professor) MURAL_POST turma=3 autor=Alberto
+[2025-11-21 16:01:52] (socket) Cliente conectado: ('192.168.3.63', 57082)
+[2025-11-21 16:01:52] (socket) Mensagem recebida: MURAL_LIST|2
+[2025-11-21 16:01:52] (cliente) MURAL_LIST turma=2
+[2025-11-21 16:02:20] (socket) Cliente conectado: ('192.168.3.63', 57083)
+[2025-11-21 16:02:20] (socket) Mensagem recebida: MURAL_POST|1|aluno|Gabriel|Pode me mandar as atividades da aula de ontem?
+[2025-11-21 16:02:20] (aluno) MURAL_POST turma=1 autor=Gabriel
+[2025-11-21 16:02:42] (socket) Cliente conectado: ('192.168.3.63', 57091)
+[2025-11-21 16:02:42] (socket) Mensagem recebida: MURAL_LIST|1
+[2025-11-21 16:02:42] (cliente) MURAL_LIST turma=1
+[2025-11-21 16:48:57] (sistema) Servidor iniciado
+[2025-11-21 16:52:43] (socket) Cliente conectado: ('127.0.0.1', 58304)
+[2025-11-21 16:52:43] (socket) Mensagem recebida: MURAL_LIST|1
+[2025-11-21 16:52:43] (cliente) MURAL_LIST turma=1
+[2025-11-21 17:03:30] (sistema) Servidor iniciado
+[2025-11-21 17:03:59] (socket) Cliente conectado: ('127.0.0.1', 58537)
+[2025-11-21 17:03:59] (socket) Mensagem recebida: MURAL_LIST|1
+[2025-11-21 17:03:59] (cliente) MURAL_LIST turma=1
+[2025-11-21 17:06:39] (socket) Cliente conectado: ('127.0.0.1', 58561)
+[2025-11-21 17:06:39] (socket) Mensagem recebida: MURAL_POST|3|professor|fabiana|Amanhã nao tera aula
+[2025-11-21 17:06:39] (professor) MURAL_POST turma=3 autor=fabiana
+[2025-11-21 17:07:52] (socket) Cliente conectado: ('127.0.0.1', 58594)
+[2025-11-21 17:07:52] (socket) Mensagem recebida: MURAL_POST|2|aluno|gabriel|teste teste
+[2025-11-21 17:07:52] (aluno) MURAL_POST turma=2 autor=gabriel
+[2025-11-21 17:10:43] (sistema) Servidor iniciado
+[2025-11-21 17:16:13] (socket) Cliente conectado: ('127.0.0.1', 58883)
+[2025-11-21 17:16:13] (socket) Mensagem recebida: MURAL_LIST|1
+[2025-11-21 17:16:13] (cliente) MURAL_LIST turma=1
+[2025-11-21 17:16:44] (socket) Cliente conectado: ('127.0.0.1', 58887)
+[2025-11-21 17:16:44] (socket) Mensagem recebida: MURAL_POST|4|professor|Joao|Enviar as atividade até o dia 15/08
+[2025-11-21 17:16:44] (professor) MURAL_POST turma=4 autor=Joao
+[2025-11-21 17:16:58] (socket) Cliente conectado: ('127.0.0.1', 58894)
+[2025-11-21 17:16:58] (socket) Mensagem recebida: MURAL_LIST|4
+[2025-11-21 17:16:58] (cliente) MURAL_LIST turma=4

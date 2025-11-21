@@ -75,7 +75,7 @@ void menuPrincipalAdmin() {
         printf("5. Menu de Aulas\n");
         printf("6. Menu de Turmas\n");
         printf("7. Menu de Administrador\n");
-        printf("8. Comunicação em rede (chat)\n");
+        printf("8. Mural da Turma (rede)\n");
         printf("9. Logout\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
@@ -103,7 +103,7 @@ void menuPrincipalAdmin() {
                 menuAdministrador();
                 break;
             case 8:
-                system("python scripts/cliente_mensagens.py");
+                system("python scripts/cliente_mensagens.py 127.0.0.1");
                 _getch();
                 break;
             case 9:
@@ -134,7 +134,7 @@ void menuPrincipalProfessor() {
         printf("2. Minhas Aulas\n");
         printf("3. Minhas Atividades\n");
         printf("4. Lançar/Editar Notas\n");
-        printf("5. Comunicação em Rede (Chat)\n");
+        printf("5. Mural da turma (rede)\n");
         printf("6. Logout\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
@@ -153,7 +153,7 @@ void menuPrincipalProfessor() {
                 menuNotas();
                 break;
             case 5:
-                system("python scripts/cliente_mensagens.py");
+                system("python scripts/cliente_mensagens.py 127.0.0.1");
                 _getch();
                 break;
             case 6:
@@ -184,7 +184,8 @@ void menuPrincipalAluno() {
         printf("1. Ver Aulas\n");
         printf("2. Ver Atividades\n");
         printf("3. Consultar Minhas Notas\n");
-        printf("4. Logout\n");
+        printf("4. Mural da turma (rede)\n");
+        printf("5. Logout\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
 
@@ -199,6 +200,10 @@ void menuPrincipalAluno() {
                 menuNotas();
                 break;
             case 4:
+                system("python scripts/cliente_mensagens.py 127.0.0.1");
+                _getch();
+                break;
+            case 5:
                 tipoUsuarioAtual = 0;
                 idUsuarioAtual = 0;
                 strcpy(usuarioNome, "");
@@ -213,7 +218,7 @@ void menuPrincipalAluno() {
                 printf("Opcao invalida!\n");
                 _getch();
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
 }
 
 void menuAlunos() {
