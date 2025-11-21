@@ -5,7 +5,13 @@
         "professorId": 1
     },
     {
-        "id": 2,
-        "nome": "Matematica"
+        "id": 3,
+        "nome": "Matematica & Estatistica",
+        "professorId": 4
+    },
+    {
+        "id": 4,
+        "nome": "Inteligencia artificial",
+        "professorId": 5
     }
 ]

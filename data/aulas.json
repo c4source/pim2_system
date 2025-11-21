@@ -4,5 +4,17 @@
         "turmaId": 1,
         "professorId": 1,
         "tema": "Algoritmos de ordenacao"
+    },
+    {
+        "id": 2,
+        "turmaId": 1,
+        "professorId": 1,
+        "tema": "Python"
+    },
+    {
+        "id": 3,
+        "turmaId": 3,
+        "professorId": 4,
+        "tema": "Funções ]["
     }
 ]

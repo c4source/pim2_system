@@ -26,5 +26,12 @@
         "email": "matheus@gmail.com",
         "senha": "c0ce4008e57ddd78802fdce918674352867fed1e29fd1c139ac00abcc7052656",
         "turmaId": 1
+    },
+    {
+        "id": 5,
+        "nome": "Fabiana",
+        "email": "fabiana123@gmail.com",
+        "senha": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+        "turmaId": 1
     }
 ]
