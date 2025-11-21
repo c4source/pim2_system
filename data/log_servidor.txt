@@ -1,0 +1,7 @@
+[2025-11-21 14:59:59] (sistema) Servidor iniciado
+[2025-11-21 15:06:49] (socket) Cliente conectado: ('127.0.0.1', 55027)
+[2025-11-21 15:06:49] (socket) Mensagem recebida: MURAL_POST|1|aluno|Gabriel|Primeira mensagem de teste no mural!
+[2025-11-21 15:06:49] (aluno) MURAL_POST turma=1 autor=Gabriel
+[2025-11-21 15:06:49] (socket) Cliente conectado: ('127.0.0.1', 55028)
+[2025-11-21 15:06:49] (socket) Mensagem recebida: MURAL_LIST|1
+[2025-11-21 15:06:49] (cliente) MURAL_LIST turma=1

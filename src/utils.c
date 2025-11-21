@@ -17,7 +17,7 @@ void executarPython(const char* script, const char* param, char* output, int siz
 
     construirCaminho(caminhoScript, script);
 
-    // ✅ Corrigido: agora os parâmetros não são agrupados entre aspas
+    //  Corrigido: agora os parâmetros não são agrupados entre aspas
     // Exemplo final: python "scripts/read_json_aula.py" data/aulas.json 5
     snprintf(comando, sizeof(comando), "%s \"%s\" %s", py_cmd(), caminhoScript, param ? param : "");
 
